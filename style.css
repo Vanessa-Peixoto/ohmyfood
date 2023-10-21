@@ -66,3 +66,48 @@ a {
 .fa-heart {
     font-size: 22px;
 }
+
+
+
+
+/*********Componant Function Card*********/
+
+.function-card {
+    display: flex;
+    width: 335px;
+    border-radius: 20px;
+    height: 72px;
+    position: relative;
+    margin: 10px;
+    background-color: #F6F6F6;
+    box-shadow: 0px 4px 15px 0px #00000026;
+}
+
+.function-card-number {
+    position: absolute;
+    left: -13px;
+    top: 10px;
+    background-color: #9356DC;
+    color: white;
+    border-radius: 31px;
+    width: 24px;
+    text-align: center;
+    height: 21px;
+    padding-top: 2px;
+}
+
+.function-card i {
+    display: flex;
+    align-items: center;
+    padding-left: 29px;
+    font-size: 21px;
+    color: #7E7E7E;
+}
+
+.function-card-title {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
