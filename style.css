@@ -1,3 +1,10 @@
+
+
+body {
+    width: 355px;
+}
+
+
 a {
     text-decoration: none;
     color: black;
@@ -17,6 +24,7 @@ li {
     border-radius: 15px;
     filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
     background-color: white;
+    margin-bottom: 1em;
 }
 
 .restaurant-card img {
@@ -85,6 +93,7 @@ li {
     margin: 10px;
     background-color: #F6F6F6;
     box-shadow: 0px 4px 15px 0px #00000026;
+    margin-bottom: 2em;
 }
 
 .function-card-number {
@@ -158,4 +167,26 @@ footer img {
     border: none;
     font-size: 1em;
     box-shadow: 0px 6px 4px 0px #00000026;
+}
+
+/******** Header ********/
+
+.location {
+    display: flex;
+    align-items: center;
+    background-color: #EAEAEA;
+    color: #353535;
+    justify-content: center;
+}
+
+.location p {
+    padding-left: 1em;
+}
+
+.content-resume {
+    text-align: center;
+}
+
+header img {
+    width: 100%;
 }
