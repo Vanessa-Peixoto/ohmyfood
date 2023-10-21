@@ -3,6 +3,10 @@ a {
     color: black;
 }
 
+li {
+    list-style: none;
+}
+
 /******Componant Restaurant Card*****/
 
 .restaurant-card {
@@ -110,4 +114,35 @@ a {
     display: flex;
     justify-content: center;
     font-weight: bold;
+}
+
+/****Footer *****/
+
+footer {
+    background-color: #353535;
+    color: white;
+    margin-top: 2em;
+}
+
+footer img {
+    width: 120px;
+    padding-left: 2.5em;
+    color: white;
+    padding-top: 2em;
+}
+
+.footer-list {
+    display: flex;
+    line-height: 2em;
+}
+
+.footer-list i {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+}
+
+.footer-list p {
+    padding-left: 12px;
+    margin: 0;
 }
