@@ -53,6 +53,7 @@
     text-transform: uppercase;
     border-bottom: 3px solid #99E2D0;
     width: 45px;
+    font-weight: normal;
 }
 
 .container-menu {
@@ -66,6 +67,16 @@
     margin-bottom: 1em;
 }
 
+.container-menu p:nth-child(1n) {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.container-menu p:nth-child(2n) {
+    font-size: 15px;
+    font-weight: normal;
+}
+
 .container-menu p {
     margin: 0;
 }
@@ -75,6 +86,7 @@
     right: 10px;
     margin: 0;
     bottom: 17px;
+    font-weight: bold;
 }
 
 .container-btn {
@@ -112,6 +124,65 @@
 }
 
 
+/**********Responsive************/
+
+    /*****Desktop****/ 
+
+@media screen and (min-width: 1024px)    {
+
+    .logo {
+        padding-left: 10em;
+        width: 200px;
+    }
+
+    .container-logo {
+        margin-bottom: 0;
+    }
+
+    .container-logo i {
+        padding-left: 1em;
+        font-size: 20px;
+    }
+
+    .img-restau {
+        height: 380px;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    .main-container {
+        width: 70%;
+        top: 30em;
+        left: 14em;
+    }
+
+    .main-container-title {
+        justify-content: center;
+    }
+    .main-container-title h2 {
+        font-size: 28px;
+    }
+
+    .main-container-title i {
+        padding-left: 1em;
+    }
+
+    .container-section {
+        padding-left: 8em;
+        padding-right: 8em;
+        margin-bottom: 2em;
+    }
+
+    .container-btn {
+        margin-top: 0;
+        margin-bottom: 4em;
+    }
+
+    .footer-menu {
+        top: 76em;
+    }
+
+}
 
 
 
