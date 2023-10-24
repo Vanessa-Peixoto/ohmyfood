@@ -38,11 +38,11 @@
 .main-container-title h2 {
     font-style: italic;
     text-align: center;
-    width: 65%;
+    font-family: 'Shrikhand';
 }
 
 .main-container-title i {
-    width: 33%;
+    width: 16%;
 }
 
 .container-section {
