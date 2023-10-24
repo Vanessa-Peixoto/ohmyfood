@@ -1,6 +1,10 @@
 
 /****Header****/
 
+header img {
+    width: 100%;
+}
+
 .container-logo {
     display: flex;
     align-items: center;
@@ -15,17 +19,15 @@
     width: 160px;
 }
 
-
-
 /*******Main*******/
 
 .main-container {
     position: absolute;
-    top: 237px;
+    top: 374px;
     background-color: #F6F6F6;
-    width: 25%;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
+    width: 100%;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
 }
 
 .main-container-title {
@@ -39,14 +41,17 @@
     font-style: italic;
     text-align: center;
     font-family: 'Shrikhand';
+    font-size: 28px;
+    padding-left: 20px;
 }
 
 .main-container-title i {
-    width: 16%;
+    width: 35%;
 }
 
 .container-section {
-    padding: 5px;
+    padding: 25px;
+    padding-top: 0;
 }
 
 .container-section h4 {
@@ -91,28 +96,27 @@
 
 .container-btn {
     text-align: center;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin-bottom: 3em;
 }
-
-
 
 /*****Restau 2*******/
 
 .menu-2 {
-    width: 19%;
-    top: 361px;
+    top: 626px;
+}
+
+.menu-2 .container-btn {
+    margin-bottom: 8em;
 }
 
 /******Restau 3*********/
 
-.menu-3 {
-    width: 22.5em;
+.menu-3 .container-btn{
+    margin-bottom: 4em;
 }
 
 .menu-4 {
-    width: 22.5em;
-    top: 244px;
+    top: 400px;
 }
 
 
@@ -188,7 +192,70 @@
     .menu-2 .container-section {
         margin-bottom: 0;
     }
+}
 
+    /*********Version Tablette*******/
+
+@media screen and (min-width: 768px) {
+
+    .logo {
+        padding-left: 4em;
+        width: 200px;
+    }
+
+    .container-logo {
+        margin-bottom: 0;
+    }
+
+    .container-logo i {
+        padding-left: 1em;
+        font-size: 20px;
+    }
+
+    .img-restau {
+        height: 380px;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    .main-container {
+        width: 70%;
+        top: 30em;
+        left: 10em;
+    }
+
+    .main-container-title {
+        justify-content: center;
+    }
+    .main-container-title h2 {
+        font-size: 28px;
+    }
+
+    .main-container-title i {
+        padding-left: 1em;
+    }
+
+    .container-section {
+        padding-left: 8em;
+        padding-right: 8em;
+        margin-bottom: 2em;
+    }
+
+    .container-btn {
+        margin-top: 0;
+        margin-bottom: 4em;
+    }
+
+    .footer-menu {
+        top: 76em;
+    }
+
+
+    /*****Resto 2****/
+
+    .menu-2 .container-section {
+        margin-bottom: 0;
+    }
 }
 
 
