@@ -5,9 +5,6 @@
 }
 
 
-body {
-    width: 355px;
-}
 
 
 a {
@@ -194,4 +191,105 @@ footer img {
 
 header img {
     width: 100%;
+}
+
+/*******Responsive*********/
+
+    /*****Version Desktop*******/
+
+@media screen and (min-width: 1024px)    {
+    
+    .container-header {
+        text-align: center;
+    }
+
+    header img {
+        width: 200px;
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+
+    .content-resume {
+        background-color: #F6F6F6;
+        padding-bottom: 3em;
+    }
+
+    .content-resume h2 {
+        font-size: 2.5em;
+        margin-top: 0;
+        padding-top: 1em;
+    }
+
+    .content-resume p {
+        color: #353535;
+        font-size: 18px;
+    }
+
+    .btn {
+        margin-top: 1em;
+    }
+
+    .container-card {
+        display: flex;
+        justify-content: center;
+    }
+
+    section h2 {
+        margin-left: 7em;
+        padding-top: 1em;
+    }
+
+    .function-card {
+        margin: 17px;
+    }
+
+    .container-restaurant {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .container-restaurant a {
+        width: 40%;
+    }
+
+    .restaurant-card img {
+        object-fit: cover;
+    }
+
+    .restaurant-card {
+        width: 100%;
+        margin-bottom: 4em;
+    }
+
+    .container-card-restaurant {
+        background-color: #F6F6F6;
+    }
+
+    footer {
+        margin-top: 0;
+        padding-top: 3em;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .footer-img {
+        display: flex;
+        width: 15%;
+    }
+
+    footer img {
+        padding-top: 0;
+    }
+
+    .container-list {
+        width: 50%;
+    }
+
+    footer ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+
 }
