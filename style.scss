@@ -1,5 +1,9 @@
 /********* General **********/
 
+body {
+    margin: 0;
+}
+
 * {
     font-family: 'Roboto', sans-serif;
 }
@@ -36,13 +40,14 @@ $color-secondary: #008766;
 
 .container-header {
     text-align: center;
+    margin-top: 2em;
 
-    & img {
+    img {
         width: 200px;
 
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: 1024px) {
             margin-bottom: 2em;
-        }
+        }   
     }
 }
 
@@ -53,7 +58,7 @@ $color-secondary: #008766;
     color: $bg-footer;
     justify-content: center;
 
-    & p {
+    p {
         padding-left: 1em;
     }
 }
@@ -63,7 +68,7 @@ $color-secondary: #008766;
     background-color: $bg-tertiary;
     padding-bottom: 4em;
 
-    & h2 {
+    h2 {
         margin-top: 0;
         padding-top: 2em;
         margin-right: 1em;
@@ -74,7 +79,7 @@ $color-secondary: #008766;
         }
     }
 
-    & p {
+    p {
         color: $bg-footer;
         font-size: 18px;
         padding: 5px;
@@ -151,7 +156,7 @@ $color-secondary: #008766;
         padding-top: 2px;
     }
 
-    & i {
+    i {
         display: flex;
         align-items: center;
         padding-left: 29px;
@@ -176,7 +181,7 @@ $color-secondary: #008766;
     @media screen and (min-width: 768px) {
         justify-content: space-evenly;
 
-        & a {
+        a {
             width: 40%;
         }
     }
@@ -202,7 +207,7 @@ $color-secondary: #008766;
         margin-bottom: 4em;
     }
 
-    & img {
+    img {
         width: 100%;
         height: 76%;
         border-top-left-radius: 15px;
@@ -222,7 +227,7 @@ $color-secondary: #008766;
     text-align: center;
     padding-top: 5px;
 
-    & p {
+    p {
         margin: 0;
         color: $color-secondary;
         font-weight: bold;
@@ -235,13 +240,13 @@ $color-secondary: #008766;
     display: flex;
     justify-content: space-between;
 
-    & h3 {
+    h3 {
         margin: 0;
         font-size: 16px;
         margin-top: 10px;
     }
 
-    & p {
+    p {
         margin: 0;
         font-size: 14px;
     }
@@ -254,6 +259,21 @@ $color-secondary: #008766;
 
 .fa-heart {
     font-size: 22px;
+
+    &:active {
+        animation: heart 1000ms forwards;
+    }
+}
+
+@keyframes heart {
+    from {
+        
+    }
+
+    to {
+        
+        background: linear-gradient(358.33deg, $bg-primary -11.44%, #FF79DA 123.93%);
+    }
 }
 
 
@@ -277,7 +297,7 @@ $color-secondary: #008766;
         }
     }
 
-    & img {
+    img {
         width: 120px;
         padding-left: 2.5em;
         fill: white;
@@ -293,7 +313,7 @@ $color-secondary: #008766;
             padding-right: 3em;
         } }
 
-    & ul {
+    ul {
         @media screen and (min-width: 768px) {
             display: flex;
             justify-content: space-between;
@@ -307,12 +327,12 @@ $color-secondary: #008766;
         line-height: 2em;
         align-items: center;
 
-        & i {
+        i {
             
             font-size: 13px;
         }
 
-        & p {
+        p {
             padding-left: 12px;
             margin: 0;
         }

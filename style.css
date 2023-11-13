@@ -1,4 +1,8 @@
 /********* General **********/
+body {
+  margin: 0;
+}
+
 * {
   font-family: "Roboto", sans-serif;
 }
@@ -16,11 +20,12 @@ li {
 /***********Header*************/
 .container-header {
   text-align: center;
+  margin-top: 2em;
 }
 .container-header img {
   width: 200px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .container-header img {
     margin-bottom: 2em;
   }
@@ -233,7 +238,15 @@ li {
 .fa-heart {
   font-size: 22px;
 }
+.fa-heart:active {
+  animation: heart 1000ms forwards;
+}
 
+@keyframes heart {
+  to {
+    background: linear-gradient(358.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  }
+}
 /****Footer *****/
 .footer {
   background-color: #353535;

@@ -1,64 +1,125 @@
+body {
+    margin: 0;
+}
+
+$bg-primary : #F6F6F6;
+$bg-secondary : #99E2D0;
+
 
 /****Header****/
 
-header img {
+.img-restau {
     width: 100%;
+
+    @media screen and (min-width: 768px) {
+        height: 380px;
+        object-fit: cover;
+    }
 }
 
 .container-logo {
     display: flex;
     align-items: center;
     margin-bottom: 1em;
-}
+    margin-top: 1em;
 
-.container-logo a {
-    width: 30%;
+    a {
+        width: 20%;
+        margin-left: 2em;
+
+        @media screen and (min-width: 768px) {
+            font-size: 24px;
+        }
+    }
 }
 
 .logo {
     width: 160px;
+
+    @media screen and (min-width: 768px) {
+        padding-left: 4em;
+        width: 200px;
+    }
+
+    @media screen and (min-width: 1024px) {
+        padding-left: 16em;
+    }
 }
 
 /*******Main*******/
 
 .main-container {
     position: absolute;
-    top: 374px;
-    background-color: #F6F6F6;
+    top: 245px;
+    background-color: $bg-primary;
     width: 100%;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
-}
 
-.main-container-title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-}
+    @media screen and (min-width: 768px) {
+        width: 80%;
+        top: 22em;
+        left: 5em;
+    }
 
-.main-container-title h2 {
-    font-style: italic;
-    text-align: center;
-    font-family: 'Shrikhand';
-    font-size: 28px;
-    padding-left: 20px;
-}
+    @media screen and (min-width: 1024px) {
+        width: 70%;
+        top: 25em;
+        left: 14em;
+    }
 
-.main-container-title i {
-    width: 35%;
+    &-2 {
+        @media screen and (min-width: 768px) {
+            top: 25em;
+        }
+    }
+    
+    &-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media screen and (min-width: 768px) {
+            justify-content: center;
+        }
+
+        h2 {
+            font-style: italic;
+            text-align: center;
+            font-family: 'Shrikhand';
+            padding-left: 20px;
+
+            @media screen and (min-width: 768px) {
+                font-size: 28px;
+            }
+        }
+
+        i {
+            width: 20%;
+
+            @media screen and (min-width: 768px) {
+                padding-left: 2em;
+            }
+        }
+    }
 }
 
 .container-section {
     padding: 25px;
     padding-top: 0;
-}
 
-.container-section h4 {
-    text-transform: uppercase;
-    border-bottom: 3px solid #99E2D0;
-    width: 45px;
-    font-weight: normal;
+    @media screen and (min-width: 1024px) {
+        padding-left: 10em;
+        padding-right: 10em;
+        padding-bottom: 8px;
+    }
+
+    h4 {
+        text-transform: uppercase;
+        border-bottom: 3px solid $bg-secondary;
+        width: 45px;
+        font-weight: normal;
+    }
 }
 
 .container-menu {
@@ -67,56 +128,34 @@ header img {
     flex-direction: column;
     background-color: white;
     border-radius: 15px;
-    box-shadow: 0px 4.011494159698486px 15.043103218078613px 0px #0000001A;
+    box-shadow: 0px 4px 15px 0px darken($bg-primary, 10%);
     padding: 15px;
     margin-bottom: 1em;
-}
 
-.container-menu p:nth-child(1n) {
-    font-weight: bold;
-    font-size: 18px;
-}
+    p {
+        margin: 0;
 
-.container-menu p:nth-child(2n) {
-    font-size: 15px;
-    font-weight: normal;
-}
+        &:nth-child(1n) {
+            font-weight: bold;
+            font-size: 17px;
+        }
 
-.container-menu p {
-    margin: 0;
+        &:nth-child(2n) {
+            font-size: 13px;
+            font-weight: normal;
+        }
+    }
 }
 
 .price {
     position: absolute;
     right: 10px;
-    margin: 0;
     bottom: 17px;
-    font-weight: bold;
 }
 
 .container-btn {
     text-align: center;
     margin-bottom: 3em;
-}
-
-/*****Restau 2*******/
-
-.menu-2 {
-    top: 626px;
-}
-
-.menu-2 .container-btn {
-    margin-bottom: 8em;
-}
-
-/******Restau 3*********/
-
-.menu-3 .container-btn{
-    margin-bottom: 4em;
-}
-
-.menu-4 {
-    top: 400px;
 }
 
 
@@ -125,140 +164,16 @@ header img {
 .footer-menu {
     position: relative;
     top: 67em;
-}
 
+    &-2{
+        top: 58em;
 
-/**********Responsive************/
+        @media screen and (min-width: 768px) {
+            top: 75em;
+        }
 
-    /*****Desktop****/ 
-
-@media screen and (min-width: 1024px)    {
-
-    .logo {
-        padding-left: 10em;
-        width: 200px;
-    }
-
-    .container-logo {
-        margin-bottom: 0;
-    }
-
-    .container-logo i {
-        padding-left: 1em;
-        font-size: 20px;
-    }
-
-    .img-restau {
-        height: 380px;
-        object-fit: cover;
-        width: 100%;
-    }
-
-    .main-container {
-        width: 70%;
-        top: 30em;
-        left: 14em;
-    }
-
-    .main-container-title {
-        justify-content: center;
-    }
-    .main-container-title h2 {
-        font-size: 28px;
-    }
-
-    .main-container-title i {
-        padding-left: 1em;
-    }
-
-    .container-section {
-        padding-left: 8em;
-        padding-right: 8em;
-        margin-bottom: 2em;
-    }
-
-    .container-btn {
-        margin-top: 0;
-        margin-bottom: 4em;
-    }
-
-    .footer-menu {
-        top: 76em;
-    }
-
-
-    /*****Resto 2****/
-
-    .menu-2 .container-section {
-        margin-bottom: 0;
+        @media screen and (min-width: 1024px) {
+            top: 73em;
+        }
     }
 }
-
-    /*********Version Tablette*******/
-
-@media screen and (min-width: 768px) {
-
-    .logo {
-        padding-left: 4em;
-        width: 200px;
-    }
-
-    .container-logo {
-        margin-bottom: 0;
-    }
-
-    .container-logo i {
-        padding-left: 1em;
-        font-size: 20px;
-    }
-
-    .img-restau {
-        height: 380px;
-        object-fit: cover;
-        width: 100%;
-    }
-
-    .main-container {
-        width: 70%;
-        top: 30em;
-        left: 10em;
-    }
-
-    .main-container-title {
-        justify-content: center;
-    }
-    .main-container-title h2 {
-        font-size: 28px;
-    }
-
-    .main-container-title i {
-        padding-left: 1em;
-    }
-
-    .container-section {
-        padding-left: 8em;
-        padding-right: 8em;
-        margin-bottom: 2em;
-    }
-
-    .container-btn {
-        margin-top: 0;
-        margin-bottom: 4em;
-    }
-
-    .footer-menu {
-        top: 76em;
-    }
-
-
-    /*****Resto 2****/
-
-    .menu-2 .container-section {
-        margin-bottom: 0;
-    }
-}
-
-
-
-
-
