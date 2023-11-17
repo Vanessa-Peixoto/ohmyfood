@@ -1,4 +1,79 @@
 /********* General **********/
+.loader {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite;
+}
+
+.loader::before, .loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid #9356DC;
+  animation: prixClipFix 2s linear infinite;
+}
+
+.loader::after {
+  inset: 8px;
+  transform: rotate3d(90, 90, 0, 180deg);
+  border-color: #FF79DA;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes prixClipFix {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+  }
+  75%, 100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+  }
+}
+.wrap {
+  animation: wrap 3s 2s backwards;
+}
+
+@keyframes wrap {
+  0% {
+    transform: translateX(-2000px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.container-loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  animation: container-loader 4s 1s forwards;
+}
+
+@keyframes container-loader {
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(2000px);
+  }
+}
 body {
   margin: 0;
 }
@@ -74,6 +149,7 @@ li {
   border: none;
   font-size: 1em;
   box-shadow: 0px 6px 4px 0px #d0d0d0;
+  transition-duration: 400ms;
   /***Responsive Desktop & Tablette***/
 }
 @media screen and (min-width: 1024px) and (min-width: 768px) {
@@ -84,6 +160,7 @@ li {
 .btn:hover {
   opacity: 0.8;
   box-shadow: 0px 6px 8px 0px #777777;
+  cursor: pointer;
 }
 
 /***********Main*************/
