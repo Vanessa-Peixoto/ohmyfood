@@ -156,7 +156,7 @@ $bg-secondary : #99E2D0;
             transform-origin: right;
         }
     
-        &:focus {
+        &:focus, &:hover {
             .select {
                 animation: select 1s forwards;
                 display: flex;
