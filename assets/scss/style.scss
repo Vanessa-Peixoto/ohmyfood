@@ -1,82 +1,48 @@
 /********* General **********/
-.loader {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    position: relative;
-    animation: rotate 1s linear infinite;
-  }
-  .loader::before , .loader::after {
-    content: "";
-    box-sizing: border-box;
-    position: absolute;
-    inset: 0px;
-    border-radius: 50%;
-    border: 5px solid #9356DC;
-    animation: prixClipFix 2s linear infinite ;
-  }
-  .loader::after{
-    inset: 8px;
-    transform: rotate3d(90, 90, 0, 180deg );
-    border-color: #FF79DA;
-  }
 
-  @keyframes rotate {
-    0%   {transform: rotate(0deg)}
-    100%   {transform: rotate(360deg)}
-  }
+/***** Variables ******/
 
-  @keyframes prixClipFix {
-      0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
-      50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
-      75%, 100%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
-  }
-
-.wrap {
-    animation: wrap 3s 2s backwards;
-}
-
-@keyframes wrap {
-    0% {
-       transform: translateX(-2000px); 
-       opacity: 0;
-    }
-
-    50% {
-        opacity: 0.5;
-    }
-
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
+$bg-primary: #9356DC;
+$bg-secondary: #99E2D0;
+$bg-tertiary: #F6F6F6;
+$bg-footer: #353535;
+$color-secondary: #008766;
+$color-animation: #FF79DA;
 
 .container-loader {
     position: absolute;
     left: 50%;
     top: 50%;
     animation: container-loader 4s 1s forwards;
+
+    .loader {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        position: relative;
+        animation: rotate 1s linear infinite;
+
+        &::before, &::after {
+            content: "";
+            box-sizing: border-box;
+            position: absolute;
+            inset: 0px;
+            border-radius: 50%;
+            border: 5px solid $bg-primary;
+            animation: prixClipFix 2s linear infinite ;
+        }
+
+        &::after {
+            inset: 8px;
+            transform: rotate3d(90, 90, 0, 180deg );
+            border-color: $color-animation;
+        }
+    }
 }
 
-@keyframes container-loader {
-   
-    50% {
-        transform:translateX(0);
-    }
-    100% {
-      transform:translateX(2000px);
-    }
-    
+.wrap {
+    animation: wrap 3s 2s backwards;
 }
-
-
-
-
-
-
-
-
 
 body {
     margin: 0;
@@ -95,14 +61,6 @@ li {
     list-style: none;
 }
 
-    /***** Variables ******/
-
-$bg-primary: #9356DC;
-$bg-secondary: #99E2D0;
-$bg-tertiary: #F6F6F6;
-$bg-footer: #353535;
-$color-secondary: #008766;
-
 @mixin container-card {
     display: flex;
     flex-wrap: wrap;
@@ -113,6 +71,95 @@ $color-secondary: #008766;
     padding-top: 2em;
     padding-left: 1em;
 }
+
+@mixin animation-heart {
+    opacity: 1;
+    background: -webkit-linear-gradient(193.33deg, $bg-primary -11.44%, $color-animation 123.93%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+    /***** Animations ******/
+
+@keyframes container-loader {
+
+    0%, 50% {
+        transform:translateX(0);
+    }
+    100% {
+        transform:translateX(2000px);
+        opacity: 0;
+    }
+}
+
+@keyframes wrap {
+    0% {
+       transform: translateX(-2000px); 
+       opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg)
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes prixClipFix {
+    0% {
+        clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)
+    }
+    50% {
+        clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)
+    }
+    75%, 100% {
+        clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)
+    }
+}
+
+@keyframes color-border {
+
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0.5;
+    }
+
+    100% {
+        @include animation-heart();
+    }
+}
+
+@keyframes transition-heart {
+    0%, 25% {
+        transform: scaleY(0);
+        opacity: 0;
+    }
+
+    50%, 75% {
+        opacity: 0.7;
+    }
+
+    100% {
+        @include animation-heart();
+        transform: scaleY(1);
+    }
+}
+
 
     /***********Header*************/
 
@@ -170,8 +217,8 @@ $color-secondary: #008766;
     width: 218px;
     height: 50px;
     border-radius: 25px;
-    background: linear-gradient(358.33deg, $bg-primary -11.44%, #FF79DA 123.93%);
-    color: white;
+    background: linear-gradient(358.33deg, $bg-primary -11.44%, $color-animation 123.93%);
+    color: #FFFFFF;
     border: none;
     font-size: 1em;
     box-shadow: 0px 6px 4px 0px darken($bg-tertiary, 15%);
@@ -233,7 +280,7 @@ $color-secondary: #008766;
         left: -13px;
         top: 10px;
         background-color: $bg-primary;
-        color: white;
+        color: #FFFFFF;
         border-radius: 31px;
         width: 24px;
         text-align: center;
@@ -283,8 +330,8 @@ $color-secondary: #008766;
     display: flex;
     flex-direction: column;
     border-radius: 15px;
-    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
-    background-color: white;
+    filter: drop-shadow(0px 3px 15px darken($bg-tertiary, 15%));
+    background-color: #FFFFFF;
     margin-bottom: 1em;
 
     @media screen and (min-width: 768px) {
@@ -337,27 +384,39 @@ $color-secondary: #008766;
     }
 }
 
-.content-icon {
-    display: flex;
-    align-items: center;
-}
+button{
 
-.fa-heart {
-    font-size: 22px;
+    background: none;
+    border: none;
+    position: relative;
 
-    &:active {
-        animation: heart 1000ms forwards;
-    }
-}
-
-@keyframes heart {
-    from {
-        
+    .fa-heart {
+        font-size: 22px;
     }
 
-    to {
-        background: linear-gradient(358.33deg, $bg-primary -11.44%, #FF79DA 123.93%);
+    .solid {
+        opacity: 0;
+        position: absolute;
+        top: 11px;
+        right: 11px;
     }
+
+    .normal {
+        margin: 5px;
+    }
+
+    &:focus, &:hover {
+
+        .solid {
+            animation: transition-heart 1s forwards;
+            transform-origin: bottom;
+        }
+
+        .normal {
+            animation: color-border 1s forwards;
+            transform-origin: bottom;
+        }
+    }  
 }
 
 
@@ -365,7 +424,7 @@ $color-secondary: #008766;
 
 .footer {
     background-color: $bg-footer;
-    color: white;
+    color: #FFFFFF;
     padding-bottom: 1em;
 
     @media screen and (min-width: 768px) {
@@ -384,7 +443,7 @@ $color-secondary: #008766;
     img {
         width: 120px;
         padding-left: 2.5em;
-        fill: white;
+        fill: #FFFFFF;
         padding-top: 2em;
 
         @media screen and (min-width: 768px) {
@@ -422,7 +481,7 @@ $color-secondary: #008766;
         }
 
         a {
-            color: white;
+            color: #FFFFFF;
         }
     }
 }

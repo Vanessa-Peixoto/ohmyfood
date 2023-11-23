@@ -1,13 +1,19 @@
 /********* General **********/
-.loader {
+/***** Variables ******/
+.container-loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  animation: container-loader 4s 1s forwards;
+}
+.container-loader .loader {
   width: 60px;
   height: 60px;
   border-radius: 50%;
   position: relative;
   animation: rotate 1s linear infinite;
 }
-
-.loader::before, .loader::after {
+.container-loader .loader::before, .container-loader .loader::after {
   content: "";
   box-sizing: border-box;
   position: absolute;
@@ -16,13 +22,56 @@
   border: 5px solid #9356DC;
   animation: prixClipFix 2s linear infinite;
 }
-
-.loader::after {
+.container-loader .loader::after {
   inset: 8px;
   transform: rotate3d(90, 90, 0, 180deg);
   border-color: #FF79DA;
 }
 
+.wrap {
+  animation: wrap 3s 2s backwards;
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+/***** Animations ******/
+@keyframes container-loader {
+  0%, 50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(2000px);
+    opacity: 0;
+  }
+}
+@keyframes wrap {
+  0% {
+    transform: translateX(-2000px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
@@ -42,56 +91,36 @@
     clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
   }
 }
-.wrap {
-  animation: wrap 3s 2s backwards;
-}
-
-@keyframes wrap {
+@keyframes color-border {
   0% {
-    transform: translateX(-2000px);
     opacity: 0;
   }
-  50% {
+  25% {
     opacity: 0.5;
   }
   100% {
-    transform: translateX(0);
     opacity: 1;
+    background: -webkit-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
-.container-loader {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  animation: container-loader 4s 1s forwards;
-}
-
-@keyframes container-loader {
-  50% {
-    transform: translateX(0);
+@keyframes transition-heart {
+  0%, 25% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  50%, 75% {
+    opacity: 0.7;
   }
   100% {
-    transform: translateX(2000px);
+    opacity: 1;
+    background: -webkit-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scaleY(1);
   }
 }
-body {
-  margin: 0;
-}
-
-* {
-  font-family: "Roboto", sans-serif;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-li {
-  list-style: none;
-}
-
-/***** Variables ******/
 /***********Header*************/
 .container-header {
   text-align: center;
@@ -145,7 +174,7 @@ li {
   height: 50px;
   border-radius: 25px;
   background: linear-gradient(358.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-  color: white;
+  color: #FFFFFF;
   border: none;
   font-size: 1em;
   box-shadow: 0px 6px 4px 0px #d0d0d0;
@@ -212,7 +241,7 @@ li {
   left: -13px;
   top: 10px;
   background-color: #9356DC;
-  color: white;
+  color: #FFFFFF;
   border-radius: 31px;
   width: 24px;
   text-align: center;
@@ -260,8 +289,8 @@ li {
   display: flex;
   flex-direction: column;
   border-radius: 15px;
-  filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
-  background-color: white;
+  filter: drop-shadow(0px 3px 15px #d0d0d0);
+  background-color: #FFFFFF;
   margin-bottom: 1em;
 }
 @media screen and (min-width: 768px) {
@@ -311,27 +340,36 @@ li {
   font-size: 14px;
 }
 
-.content-icon {
-  display: flex;
-  align-items: center;
+button {
+  background: none;
+  border: none;
+  position: relative;
 }
-
-.fa-heart {
+button .fa-heart {
   font-size: 22px;
 }
-.fa-heart:active {
-  animation: heart 1000ms forwards;
+button .solid {
+  opacity: 0;
+  position: absolute;
+  top: 11px;
+  right: 11px;
+}
+button .normal {
+  margin: 5px;
+}
+button:focus .solid, button:hover .solid {
+  animation: transition-heart 1s forwards;
+  transform-origin: bottom;
+}
+button:focus .normal, button:hover .normal {
+  animation: color-border 1s forwards;
+  transform-origin: bottom;
 }
 
-@keyframes heart {
-  to {
-    background: linear-gradient(358.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-  }
-}
 /****Footer *****/
 .footer {
   background-color: #353535;
-  color: white;
+  color: #FFFFFF;
   padding-bottom: 1em;
 }
 @media screen and (min-width: 768px) {
@@ -350,7 +388,7 @@ li {
 .footer img {
   width: 120px;
   padding-left: 2.5em;
-  fill: white;
+  fill: #FFFFFF;
   padding-top: 2em;
 }
 @media screen and (min-width: 768px) {
@@ -386,7 +424,7 @@ li {
   margin: 0;
 }
 .footer-list a {
-  color: white;
+  color: #FFFFFF;
 }
 
 @media screen and (min-width: 768px) {

@@ -1,8 +1,10 @@
-.section-entree {
-  animation: show-entree 3s backwards;
+body {
+  margin: 0;
 }
 
-@keyframes show-entree {
+/*******Variables****/
+/****Animation******/
+@keyframes show {
   0% {
     transform: translateX(-2000px);
     opacity: 0;
@@ -12,47 +14,6 @@
     opacity: 1;
   }
 }
-.section-plat {
-  animation: show-plat 3s 2s backwards;
-}
-
-@keyframes show-plat {
-  0% {
-    transform: translateX(-2000px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-.section-dessert {
-  animation: show-dessert 3s 4s backwards;
-}
-
-@keyframes show-dessert {
-  0% {
-    transform: translateX(-2000px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-.link-menu .select {
-  display: none;
-  padding: 0 20px;
-  background-color: #99E2D0;
-  border-radius: 0 15px 15px 0;
-  transform-origin: right;
-}
-.link-menu:focus .select {
-  animation: select 1s forwards;
-  display: flex;
-  align-items: center;
-}
-
 @keyframes select {
   0% {
     transform: scaleX(0);
@@ -61,10 +22,6 @@
     transform: scaleX(1);
   }
 }
-body {
-  margin: 0;
-}
-
 /****Header****/
 .img-restau {
   width: 100%;
@@ -156,13 +113,20 @@ body {
     font-size: 28px;
   }
 }
-.main-container-title i {
-  width: 20%;
+.main-container-title .s-menu {
+  top: 6px;
 }
-@media screen and (min-width: 768px) {
-  .main-container-title i {
-    padding-left: 2em;
-  }
+
+.section-entree {
+  animation: show 3s backwards;
+}
+
+.section-plat {
+  animation: show 3s 2s backwards;
+}
+
+.section-dessert {
+  animation: show 3s 4s backwards;
 }
 
 .container-section {
@@ -176,16 +140,32 @@ body {
     padding-bottom: 8px;
   }
 }
+.container-section .link-menu .select {
+  display: none;
+  padding: 0 20px;
+  background-color: #99E2D0;
+  border-radius: 0 15px 15px 0;
+  transform-origin: right;
+}
+.container-section .link-menu:focus .select {
+  animation: select 1s forwards;
+  display: flex;
+  align-items: center;
+}
 .container-section h4 {
   text-transform: uppercase;
+  font-weight: normal;
+}
+.container-section h4::after {
+  content: "";
   border-bottom: 3px solid #99E2D0;
   width: 45px;
-  font-weight: normal;
+  display: block;
 }
 
 .container-menu {
   display: flex;
-  background-color: white;
+  background-color: #FFFFFF;
   border-radius: 15px;
   box-shadow: 0px 4px 15px 0px #dddddd;
   margin-bottom: 1em;
