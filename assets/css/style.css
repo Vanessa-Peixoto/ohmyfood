@@ -57,6 +57,7 @@ li {
   100% {
     transform: translateX(2000px);
     opacity: 0;
+    display: none;
   }
 }
 @keyframes wrap {

@@ -95,12 +95,7 @@ body {
 .main-container-title {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-}
-@media screen and (min-width: 768px) {
-  .main-container-title {
-    justify-content: center;
-  }
+  justify-content: center;
 }
 .main-container-title h2 {
   font-style: italic;
@@ -112,6 +107,9 @@ body {
   .main-container-title h2 {
     font-size: 28px;
   }
+}
+.main-container-title button {
+  padding-left: 25px;
 }
 .main-container-title .s-menu {
   top: 6px;
@@ -147,7 +145,7 @@ body {
   border-radius: 0 15px 15px 0;
   transform-origin: right;
 }
-.container-section .link-menu:focus .select {
+.container-section .link-menu:focus .select, .container-section .link-menu:hover .select {
   animation: select 1s forwards;
   display: flex;
   align-items: center;

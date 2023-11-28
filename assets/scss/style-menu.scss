@@ -101,11 +101,7 @@ $bg-secondary : #99E2D0;
     &-title {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-
-        @media screen and (min-width: 768px) {
-            justify-content: center;
-        }
+        justify-content: center;
 
         h2 {
             font-style: italic;
@@ -116,6 +112,10 @@ $bg-secondary : #99E2D0;
             @media screen and (min-width: 768px) {
                 font-size: 28px;
             }
+        }
+
+        button {
+            padding-left: 25px;
         }
 
         .s-menu {
