@@ -142,6 +142,7 @@ li {
   background-color: #dddddd;
   color: #353535;
   justify-content: center;
+  margin-top: 1em;
 }
 .location p {
   padding-left: 1em;
@@ -256,6 +257,9 @@ li {
   font-size: 21px;
   color: #909090;
 }
+.function-card .fa-store {
+  color: #9356DC;
+}
 .function-card-title {
   width: 100%;
   align-items: center;
@@ -318,6 +322,7 @@ li {
   font-size: 14px;
   text-align: center;
   padding-top: 5px;
+  box-shadow: 0px 4px 15px 0px #909090;
 }
 .tag p {
   margin: 0;
